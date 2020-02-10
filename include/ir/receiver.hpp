@@ -7,14 +7,14 @@ namespace ir {
 class Receiver {
 private:
   int receiver_pin_;
-  String recording_;
 
 public:
   Receiver(int receiver_pin);
 
-  void receive(int duration_ms);
-  String get_recording();
-  void clear();
+  void receive(
+    unsigned long duration_ms,
+    boolean* output,
+    unsigned int max_len);
 };
 }
 
