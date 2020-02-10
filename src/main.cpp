@@ -1,8 +1,9 @@
 #include <Arduino.h>
+#include <ir/receiver.hpp>
 
 #define IN_SIGNAL_PIN 12
 
-int previous_state = 1023;
+ir::Receiver receiver(IN_SIGNAL_PIN);
 
 void setup() {
   Serial.begin(9600);
@@ -11,11 +12,10 @@ void setup() {
 }
 
 void loop() {
-  int state = digitalRead(IN_SIGNAL_PIN);
-  if (state != previous_state) {
-    Serial.println(state);
-    previous_state = state;
-  }
+  // Receive for 1 second and print results
+  receiver.receive(2000); 
+  String recording = receiver.get_recording();
+  receiver.clear();
 
-  delay(2);
+  delay(500);
 }
