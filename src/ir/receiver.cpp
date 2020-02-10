@@ -5,11 +5,11 @@ Receiver::Receiver(int receiver_pin) : receiver_pin_(receiver_pin) {
 
 }
 
-void receive(int timeout) {
+void Receiver::receive(int timeout_ms) {
 
 }
 
-bool* get_recording() {
+bool* Receiver::get_recording() {
     return nullptr;
 }
 }

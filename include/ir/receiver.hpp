@@ -9,7 +9,7 @@ private:
 public:
   Receiver(int receiver_pin);
 
-  void receive(int timeout);
+  void receive(int timeout_ms);
   bool* get_recording();
 };
 }
