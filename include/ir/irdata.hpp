@@ -3,7 +3,11 @@
 
 namespace ir {
 class IRData {
-
+private:
+  bool data_valid_;
+public:
+  IRData();
+  IRData(bool data_valid);
 };
 }
 
