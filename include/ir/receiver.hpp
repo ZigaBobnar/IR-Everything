@@ -1,7 +1,7 @@
 #ifndef IR_RECEIVER_HPP_
 #define IR_RECEIVER_HPP_
 
-#include <irdata.hpp>
+#include <ir/irdata.hpp>
 
 namespace ir {
 class Receiver {
