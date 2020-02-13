@@ -1,7 +1,7 @@
 #ifndef IR_RECEIVER_HPP_
 #define IR_RECEIVER_HPP_
 
-#include <Arduino.h>
+#include <irdata.hpp>
 
 namespace ir {
 class Receiver {
@@ -11,10 +11,7 @@ private:
 public:
   Receiver(int receiver_pin);
 
-  void receive(
-    unsigned long duration_ms,
-    boolean* output,
-    unsigned int max_len);
+  IRData receive(unsigned int require_exact_recordings = 1);
 };
 }
 
